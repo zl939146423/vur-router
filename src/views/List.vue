@@ -7,8 +7,9 @@
             <router-link
                 v-for="nav in navs"
                 :key="nav.id"
-                :to="nav.path"
+                :to="{name: nav.name}"
                 active-class="abc"
+                replace
             >{{nav.title}}</router-link>
         </div>
         <router-view></router-view>
@@ -20,8 +21,8 @@ export default {
     data(){
         return {
             navs:[
-                {id:1, title:"国内新闻", path:"/list/guonei"},
-                {id:2, title:"国际新闻", path:"/list/guoji"}
+                {id:1, title:"国内新闻", name:"gn"},
+                {id:2, title:"国际新闻", name:"gj"}
             ]
         }
     }
